@@ -15,20 +15,17 @@ const WeatherWidget = () => {
 			setData(data.data)
 			setLocation("")
 		}
-
 	}
 
 	return (
-		<>
-			<input
-				type="text"
-				value={location}
-				onKeyDown={searchLocation}
-				onChange={e => setLocation(e.target.value)}
-				placeholder="Введите город"
-			/>
-			{
 				<div className='widget'>
+					<input
+						type="text"
+						value={location}
+						onKeyDown={searchLocation}
+						onChange={e => setLocation(e.target.value)}
+						placeholder="Введите город"
+					/>
 					<div className='widget__top'>
 						<div className="widget__location">{data.name}</div>
 						<div className="widget__temp">{data.main ? Math.round(data.main.temp) : ''} °C</div>
@@ -52,9 +49,7 @@ const WeatherWidget = () => {
 						</div>
 					</div>
 					
-				</div>}
-
-		</>
+				</div>
 
 	);
 };
