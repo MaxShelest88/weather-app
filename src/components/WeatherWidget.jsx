@@ -1,36 +1,11 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 
-
-const WeatherWidget = () => {
-
-	const [data, setData] = useState({})
-	const [location, setLocation] = useState('')
-
-	const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location}&lang=ru&appid=f520b15b2396b58c86aaaeacfca564d7`
-
-	async function searchLocation(e) {
-		if (e.key === "Enter") {
-			const data = await axios.get(API_URL)
-			setData(data.data)
-			setLocation("")
-		}
-	}
-
+const WeatherWidget = ({ data }) => {
 	return (
 		<div className='widget'>
-			<div className="widget__search">
-				<input
-					type="text"
-					value={location}
-					onKeyDown={searchLocation}
-					onChange={e => setLocation(e.target.value)}
-					placeholder="Введите город"
-				/>
-			</div>
 			<div className='widget__top'>
 				<div className="widget__location">{data.name}</div>
-				<div className="widget__temp">{data.main ? Math.round(data.main.temp) : ''} °C</div>
+				<div className="widget__temp">{data.main ? Math.round(data.main.temp) : ''}°C</div>
 				<div className="widget__icon">
 					{data.weather ? <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="" /> : ""}
 				</div>
@@ -39,11 +14,11 @@ const WeatherWidget = () => {
 			<div className='widget__bottom'>
 				<div className="widget__feels">
 					<p>Ощущается как</p>
-					<p>{data.main ? Math.round(data.main.feels_like) : ""} °C</p>
+					<p>{data.main ? Math.round(data.main.feels_like) : ""}°C</p>
 				</div>
 				<div className="widget__humidity">
 					<p>Влажность</p>
-					<p>{data.main ? data.main.humidity : ""} %</p>
+					<p>{data.main ? data.main.humidity : ""}%</p>
 				</div>
 				<div className="windget__wind">
 					<p>Ветер</p>
