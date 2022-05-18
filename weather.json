@@ -1,0 +1,41 @@
+{
+	"coord": {
+		"lon": 44.5018,
+		"lat": 48.7194
+	},
+	"weather": [{
+		"id": 800,
+		"main": "Clear",
+		"description": "ясно",
+		"icon": "01d"
+	}],
+	"base": "stations",
+	"main": {
+		"temp": 18.43,
+		"feels_like": 17.27,
+		"temp_min": 17.05,
+		"temp_max": 18.43,
+		"pressure": 1011,
+		"humidity": 36
+	},
+	"visibility": 10000,
+	"wind": {
+		"speed": 6,
+		"deg": 230
+	},
+	"clouds": {
+		"all": 0
+	},
+	"dt": 1652870368,
+	"sys": {
+		"type": 1,
+		"id": 8973,
+		"country": "RU",
+		"sunrise": 1652836646,
+		"sunset": 1652891978
+	},
+	"timezone": 10800,
+	"id": 472757,
+	"name": "Волгоград",
+	"cod": 200
+}
