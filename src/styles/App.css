@@ -50,6 +50,21 @@ body {
 }
 .widget__location {
 }
+
+.widget__search {
+	text-align: center;
+	padding: 1rem;
+}
+
+.widget__search input{
+	padding: .7rem 1.5rem;
+	font-size: 1.2rem;
+	border-radius: 25px;
+	border: 1px solid rgba(255,255,255,0.8);
+	background: rgba(255,25,255,0.1);
+	text-align: center;
+	color: #fff;
+}
 .widget__temp {
 	font-size: 4rem;
 	font-weight: 700;
@@ -71,7 +86,13 @@ body {
 	padding: 1rem;
 	background-color: rgba(255, 255, 255, 0.2);
 }
-.widget__feels {
+.widget__feels,
+.widget__humidity,
+.windget__wind {
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .widget__humidity {
 }
