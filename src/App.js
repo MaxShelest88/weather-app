@@ -10,7 +10,7 @@ function App() {
 
 	const [location, setLocation] = useState('')
 
-	const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location? location : "Москва"}&lang=ru&appid=f520b15b2396b58c86aaaeacfca564d7`
+	const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location ? location : "Москва"}&lang=ru&appid=f520b15b2396b58c86aaaeacfca564d7`
 
 	async function searchLocation(e) {
 		e.preventDefault()
@@ -34,7 +34,7 @@ function App() {
 			}
 		}
 		searchLocation()
-	},[])
+	}, [])
 
 	const enterLocation = (location) => {
 		setLocation(location)
@@ -45,9 +45,8 @@ function App() {
 			<div className="container">
 				<div className="body">
 					<WeatherForm location={location} enter={enterLocation} search={searchLocation} />
-					{data.response?.status === 404 ? "Город не найден" : <WeatherWidget data={data} />}	
+					{data.response?.status === 404 ? <p style={{ textAlign: "center", position: "absolute", top: "50%", left: "50%", transform: `translate(${-50}%, ${0}px)` }}>Город не найден</p> : <WeatherWidget data={data} />}
 				</div>
-				
 			</div>
 		</div>
 	);
