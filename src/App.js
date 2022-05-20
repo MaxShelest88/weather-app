@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import WeatherForm from "./components/WeatherForm";
 
+// TEST!!
 function App() {
 
 	const [data, setData] = useState({})
