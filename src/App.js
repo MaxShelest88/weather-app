@@ -10,7 +10,7 @@ function App() {
 
 	const [location, setLocation] = useState('')
 
-	const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location ? location : "Москва"}&lang=ru&appid=f520b15b2396b58c86aaaeacfca564d7`
+	const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location ? location : "Москва"}&lang=ru`
 
 	async function searchLocation(e) {
 		e.preventDefault()
